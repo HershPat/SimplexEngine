@@ -5,6 +5,9 @@ numvars = int(input('Number of variables: '))
 numconstr = int(input('Number of constraints: '))
 type = (input('What type of Function (Min/Max): '))
 tab = Tableau(numvars=numvars, numconstraints=numconstr, type=type)
+for x in range(numvars):
+    var = int(input(f'Enter the value for x{x+1} in the objective function: '))
+    tab.makeObjective(var)
 for i in range(numconstr):
     c = Constraint(numvars = numvars)
     c.setType(type)
@@ -16,8 +19,8 @@ for i in range(numconstr):
     sol = int(input(f'Enter the solution for constraint {i+1}: '))
     c.addVariable(sol)
     tab.addRow(c)
-tab.addSlacks()
-tab.addArtificial()
+tab.execute()
 np.set_printoptions(suppress=True, precision=3)
-for i in tab.getTableau():
-    print(f'Constraints: {i}')
+print(tab.getTableau())
+print(tab.getPivotCol())
+print(tab.getExitVar())
