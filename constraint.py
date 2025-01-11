@@ -42,10 +42,16 @@ class Constraint:
     #                 self.normalized = True
     
     def getSlackValue(self):
-        if not self.isCononical:
-            if not self.normalized:
-                return -1
-            else:
-                return 1
-    
+        if self.type == 'Max':
+            if not self.isCononical:
+                if not self.normalized:
+                    return -1
+                else:
+                    return 1
+        elif self.type == 'Min':
+            if not self.isCononical:
+                if not self.normalized:
+                    return 1
+                else:
+                    return -1
     

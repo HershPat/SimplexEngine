@@ -22,5 +22,4 @@ for i in range(numconstr):
 tab.execute()
 np.set_printoptions(suppress=True, precision=3)
 print(tab.getTableau())
-print(tab.getPivotCol())
-print(tab.getExitVar())
+tab.printSol()
