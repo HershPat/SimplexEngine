@@ -35,14 +35,22 @@ Class that implements the simplex tableau and algorithm. Contains:
 
 ## Example
 For the linear program:
-Maximize: 3x₁ + 2x₂
+
+Maximize: 
+
+For the linear program:
+
+Maximize: 
+
+Z = 3x₁ + 2x₂
 
 Subject to:
-2x₁ + x₂ <= 18
-2x₁ + 3x₂ <= 42
-3x₁ + x₂ <= 24
 
+2x₁ + x₂ <= 18,
+2x₁ + 3x₂ <= 42,
+3x₁ + x₂ <= 24,
 x₁, x₂ >= 0
+
 
 Input sequence:
 1. Number of variables: 2
