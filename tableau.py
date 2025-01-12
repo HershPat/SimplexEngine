@@ -107,18 +107,23 @@ class Tableau:
         
         self.basicvars[pivrow] = pivcol
     def printSol(self):
-        print("Solution:")
+        print("\nOptimal Solution:")
         if self.numvars+self.numslack in self.basicvars.values():
             print(f'The solution is infeasible')
             return
+        rowsList = list(self.basicvars.keys())
+        colList = list(self.basicvars.values())
         for i in range(self.numvars):
             if i in self.basicvars.values():
-                print(f"x{i+1} = {self.tableau[self.basicvars[i], -1]}")
+                row = rowsList[colList.index(i)]
+                print(f"x{i+1} = {self.tableau[row, -1]:.3}")
             else:
-                print(f"x{i+1} = 0")
+                print(f"x{i+1} = 0.0")
         for i in range(self.numslack):
-            if i+self.numvars in self.basicvars.values():
-                print(f"s{i+1} = {self.tableau[self.basicvars[i]-self.numvars, -1]}")
+            slackIndex = self.numvars + i
+            if slackIndex in self.basicvars.values():
+                row = rowsList[colList.index(slackIndex)]
+                print(f"s{i+1} = {self.tableau[row, -1]:.3}")
             else:
-                print(f"s{i+1} = 0")
-        print(f"Optimal objective value: {self.tableau[-1, -1]}")
+                    print(f"s{i+1} = 0.0")
+        print(f"\nOptimal value: {self.tableau[-1, -1]:.3}")

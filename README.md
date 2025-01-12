@@ -64,15 +64,23 @@ Input sequence:
 
 Output:
 Final tableau:
-[[ 1.    0.    0.    0.5   0.    1.5   9. ]
- [ 0.    1.    0.    0.    0.    1.    6. ]
- [ 0.    0.    1.    0.5   0.   -0.5   3. ]
- [ 0.    0.    0.   -0.5   1.   -0.5  12. ]]
 
-Optimal solution:
-x₁ = 6
-x₂ = 6
-Optimal value: 30
+[[ 0.    1.   -0.5   0.5   0.   12.  ]
+
+ [ 0.    0.   -1.75  0.25  1.    3.  ]
+
+ [ 1.    0.    0.75 -0.25  0.    3.  ]
+
+ [ 0.    0.    1.25  0.25  0.   33.  ]]
+
+Optimal Solution:
+x₁ = 3.0
+x₂ = 12.0
+s₁ = 0.0
+s₂ = 0.0
+s₃ = 3.0
+
+Optimal value: 33.0
 
 ## Implementation Details
 

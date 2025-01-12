@@ -21,5 +21,6 @@ for i in range(numconstr):
     tab.addRow(c)
 tab.execute()
 np.set_printoptions(suppress=True, precision=3)
+print("Final Tableau:\n")
 print(tab.getTableau())
 tab.printSol()
